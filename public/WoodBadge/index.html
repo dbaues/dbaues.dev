@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="icon" href="res/fleurdelis300x300.jpg">
+
+    <title>Join Scouting!</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7e7e7d9138.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- v  Don't hate me for this v -->
+    <style>
+        /************* General Doc Styles ****************/
+        /*
+            a = section 1
+            b = section 2
+            c = section 3
+            d = section 4
+            e = section 5
+            f = section 6
+            g = section 7
+            h = section 8
+         */
+        * { /* Browser Reset */
+            font-family: 'Comfortaa', cursive;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        /******** DEBUG *** toggle -> *
+        div, section {
+            outline: 2px solid red;
+        }/**/
+
+        section {
+            height: 800px;
+        }
+
+        /********** Header **********************/
+        header {
+            height: 80px;
+            position: sticky;
+            top: 0;
+            left: 0;
+            background: rgb(30,30,30);
+            z-index: 11;
+        }
+        header div {
+            padding: 20px;
+            position: relative;
+        }
+        header a {
+            text-decoration: none;
+        }
+        header a h2 {
+            font-size: 35px;
+            color: whitesmoke;
+            display: inline;
+        }
+        header a h2 span {
+            color: rgb(130,130,130);
+        }
+        /*********** Footer *********************/
+        footer {
+            padding: 10px;
+            height: 80px;
+            background: rgb(30,30,30);
+            z-index: 11;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .footer-img {
+            background-image: url("res/22-222066_w-a-n-d-e-r-e-r.png");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            width: 10em;
+            height: 100%;
+        }
+        footer div {
+            margin: 0 10px;
+        }
+        /************* MISC **************************/
+        #igloo {
+            display: inline;
+            color: white;
+            z-index: 50;
+            position: absolute;
+            right: 20px;
+            top: 0;
+        }
+        .he-gone-he-back {
+            opacity: 0;
+            transition: all .5s ease-in-out;
+        }
+        #loader {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: #202020;
+            z-index: 7;
+        }
+        @keyframes loaded {
+            from { opacity: 100%; }
+            to   { opacity: 0; }
+        }
+        .load {
+            animation-name: loaded;
+            animation-duration: 3s;
+            opacity: 0;
+        }
+    </style>
+    <style>
+        /*********** Section 1 [a] *****************/
+        section.a{
+            height: 800px;
+        }
+        .a-background {
+            width: 100%;
+            height: 100%;
+            background-image: url("res/IMG_1353.JPG");
+        }
+        div.a {
+            margin: auto;
+        }
+        h1.a {
+            font-size: 300%;
+        }
+
+
+        .a-vert {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .a-flex-me-betch {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 65%;
+            margin: 0 auto;
+        }
+        .a-row-item {
+            flex: 1 1 0;
+            width: 400px;
+            flex-wrap: wrap;
+            margin: 20px;
+            padding: 10px;
+        }
+        .a-flex-info {
+            text-align: left;
+        }
+        .a-flex-info h1 {
+            font-size: 325%;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .a-flex-info p {
+            font-size: 110%;
+            line-height: 1.4em;
+        }
+        .a-flex-form {
+            text-align: right;
+        }
+        .a-flex-form h3 {
+            font-size: 200%;
+            padding-bottom: 20px;
+            margin-right: 10px;
+        }
+        .a-input {
+            padding: 5px 10px;
+            margin: 10px 0;
+        }
+        .a-input label input, #name, #email {
+            height: 40px;
+            width: 70%;
+            text-align: right;
+            font-size: 100%;
+            padding-right: 10px;
+            color: rgb(50,50,50);
+        }
+        .a-hidden-control {
+            visibility: hidden;
+        }
+        .a-submit {
+            margin: 20px 0;
+            padding: 10px;
+        }
+        .a-submit-btn {
+            border-radius: 5px;
+            border: 2px solid whitesmoke;
+            padding: 15px;
+            text-decoration: none;
+        }
+    </style>
+    <style>
+        /************** Section 2 [b] *************/
+        section.b {
+            height: 500px;
+        }
+        div.b {
+            margin: auto;
+        }
+        .b-background {
+            background: rgb(59, 87, 28);
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+        .b-vert {
+            width: 95%;
+            height: 100%;
+        }
+        .b-flex-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 100%;
+        }
+        .b-row-item{
+            width: 30%;
+            flex: 1 1 0;
+            position: relative;
+            z-index: 3;
+            padding-right: 15px;
+            padding-left: 15px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .b-row-item h1 {
+            position: absolute;
+            font-size: 1000%;
+            font-family: 'Montserrat', sans-serif;
+            right: 25%;
+            top: 10%;
+            color: #808080;
+            z-index: -1;
+        }
+        .b-row-item h2 {
+            text-align: center;
+            font-size: 300%;
+            padding-bottom: 20px;
+        }
+        .b-row-item p {
+            text-align: center;
+            font-size: 150%;
+        }
+        @media only screen and (max-width: 1200px) {
+            .b-row-item h2 {
+                font-size: 250%;
+            }
+            .b-row-item p {
+                font-size: 130%;
+            }
+        }
+        @media only screen and (max-width: 1000px) {
+            .b-row-item h2 {
+                font-size: 200%;
+            }
+            .b-row-item p {
+                font-size: 120%;
+            }
+        }
+        @media only screen and (max-width: 800px) {
+            .b-row-item h2 {
+                font-size: 125%;
+            }
+            .b-row-item p {
+                font-size: 80%;
+            }
+            section.b {
+                height: 300px;
+            }
+            .b-row-item h1 {
+                font-size: 700%;
+            }
+        }
+    </style>
+    <style>
+        /**************** Section 3 [c] *****************/
+        section.c {
+            height: 22vw;
+        }
+        .c {
+            margin: 0;
+            padding: 0;
+        }
+        .c-background {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin: 0;
+        }
+        .c-flex-row {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: 0;
+            padding: 0;
+        }
+        .c-row-item {
+            width: calc(100%/3);
+        }
+        .c-row-item div {
+            background-size: 100%;
+            width: 100%;
+            height: 100%;
+        }
+        .c-img-1 {
+            background-image: url("res/MVIMG_20190712_095320.jpg");
+        }
+        .c-img-2 {
+            background-image: url("res/IMG_0665.JPEG");
+        }
+        .c-img-3 {
+            background-image: url("res/IMG_20180615_130606.jpg");
+        }
+        /*  -> set to proportional
+        @media only screen and (max-width: 1600px) {
+            section.c { height: 350px; }
+        }
+        @media only screen and (max-width: 1400px) {
+            section.c { height: 300px; }
+        }
+        @media only screen and (max-width: 1200px) {
+            section.c { height: 250px; }
+        }
+        @media only screen and (max-width: 1000px) {
+            section.c { height: 200px; }
+        }
+        @media only screen and (max-width: 800px) {
+            section.c { height: 150px; }
+        }
+        */
+    </style>
+    <style>
+        /**************** Section 4 [d] *******************/
+        section.d {
+            height: 800px;
+        }
+        .d-background {
+            background-image: url("res/838E269E-.jpg");
+            background-size: 100%;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .d-content {
+            width: 40%;
+            margin: 0 auto;
+            text-justify: newspaper;
+        }
+        .d-content p {
+            line-height: 2em;
+            font-size: 120%;
+        }
+        .d-author {
+            width: 100%;
+            margin: 10px;
+            text-align: right;
+        }
+        .d-author h3 {
+            font-size: 110%;
+            padding-right: 5%
+        }
+
+        @media only screen and (max-width: 1300px){
+            section.d { height: 700px; }
+        }
+        @media only screen and (max-width: 1200px){
+            section.d { height: 600px; }
+        }
+        @media only screen and (max-width: 1000px){
+            .d-content {
+                width: 60%;
+            }
+        }
+    </style>
+    <style>
+        /************** Section 5 [e] *****************/
+        section.e {
+            height: 16vw;
+        }
+        .e-background {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            position: relative;
+            align-items: center;
+            margin: 0;
+        }
+        .e-info {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 40px;
+            width: 100%;
+            background: rgb(59, 87, 28);
+            text-align: center;
+        }
+        .e-info h3 {
+            margin-top: 10px;
+        }
+        .e-vert {
+            position: absolute;
+            top: 40px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+        }
+        .e-flex-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            height: 100%;
+        }
+        .e-row-item {
+            width: calc(100%/4);
+        }
+        .e-row-item div {
+            background-size: 100%;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .e-img-1 {
+            background-image: url("res/scuba-adventure.jpg");
+        }
+        .e-img-2 {
+            background-image: url("res/Baldy_Aspens_Edits_005-2048x1366.jpg");
+        }
+        .e-img-3 {
+            background-image: url("res/GIS-Top-685x4501-610x400.jpg");
+        }
+        .e-img-4 {
+            background-image: url("res/mea-2-300x300.jpg");
+        }
+        .e-card {
+            padding-top: 4%;
+        }
+        .e-card h4 {
+            margin-left: 5%;
+            background: rgba(50,50,50,.7);
+            padding: 10px;
+            border-radius: 5px;
+            display: inline;
+        }
+        .e-card p {
+            display: inline;
+            color: #202020;
+            font-weight: bold;
+        }
+        .e-card a {
+            text-decoration: none;
+        }
+        @media only screen and (max-width: 1000px){
+            .e-card p {
+                visibility: hidden;
+            }
+            .e-card h4 {
+                padding: 5px;
+            }
+        }
+    </style>
+    <style>
+        /*********** Section 6 [f] *****************/
+        section.f {
+            height: 150px;
+            position: relative;
+        }
+        .f-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 5;
+            height: 100%;
+            background: #353535;
+        }
+        .f-flex {
+            width: 90%;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        .f-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 200%;
+        }
+        .f-top {
+            text-align: left;
+        }
+        .f-bot {
+            text-align: right;
+        }
+        .f-law {
+            margin: 10px;
+            text-align: center;
+        }
+        .f-law h4{
+            color: #AAAAAA;
+        }
+        @media only screen and (max-width: 900px){
+            section.f {
+                height: 200px;
+            }
+            .f-content h2 {
+                font-size: 150%;
+            }
+        }
+        @media only screen and (max-width: 900px){
+            .f-content h2 {
+                font-size: 120%;
+            }
+        }
+    </style>
+    <style>
+        /**************** Section 7 [g] ****************/
+        section.g {
+            height: 50vw;
+        }
+        .g-background {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-image: url("res/IMG_0891.jpeg");
+            background-size: 100%;
+        }
+        .g-vert {
+            position: absolute;
+            top: 25%;
+            width: 100%;
+        }
+        .g-content {
+            width: 100%;
+            text-align: center;
+        }
+        .g-content h2 {
+            font-size: 350%;
+            text-shadow: 2px 0 5px grey;
+            font-family: 'Montserrat', sans-serif;
+        }
+        @media only screen and (max-width: 1000px){
+            .g-content h2 {
+                font-size: 250%;
+            }
+            .g-vert {
+                top: 15%;
+            }
+        }
+        @media only screen and (max-width: 700px){
+            .g-content h2 {
+                font-size: 200%;
+            }
+            .g-vert {
+                top: 10%;
+            }
+        }
+    </style>
+    <style>
+        /*************** Section 8 [h] ****************/
+        section.h {
+            height: 18vw;
+        }
+        .h-background {
+            background: rgb(100,100,100);
+            width: 100%;
+            height: 100%;
+        }
+        .h-vert {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+        .h-flex-split {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            width: 100%;
+            height: 100%;
+        }
+        .h-left, .h-right {
+            width: 50%;
+        }
+        .h-left {
+
+        }
+        .h-flex-row {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .h-row-item {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        .h-contact {
+            width: 100%;
+            line-height: 2rem;
+            text-align: left;
+            margin: 15%;
+            font-size: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .h-contact div {
+            margin: 10px;
+        }
+        .h-contact h2 {
+            padding-bottom: 10px;
+        }
+        .h-contact a {
+            text-decoration: none;
+            font-size: 120%;
+        }
+        .h-row-background {
+            background-image: url("res/IMG_20180612_195408.jpg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        .h-img-1 {
+            background-image: url("res/IMG_2140.jpg");
+            background-size: 100%;
+        }
+        .h-img-2 {
+            background-size: 100%;
+            background-image: url("res/IMG_20190817_131548.jpg");
+        }
+        @media only screen and (max-width: 1750px){
+            .h-contact h2 {
+                font-size: 110%;
+                padding-bottom: 0;
+            }
+            .h-contact a {
+                font-size: 100%;
+            }
+        }
+        @media only screen and (max-width: 1325px){
+            .h-contact div {
+                margin: 0;
+            }
+        }
+        @media only screen and (max-width: 1000px){
+            .h-contact {
+                line-height: 1.5em;
+            }
+            .h-contact h2 {
+                font-size: 80%;
+            }
+            .h-contact a {
+                font-size: 80%;
+            }
+        }
+        @media only screen and (max-width: 1000px){
+            .h-contact {
+                line-height: 1em;
+                margin: 0 10%;
+            }
+            .h-contact h2 {
+                font-size: 70%;
+            }
+            .h-contact a {
+                font-size: 70%;
+            }
+        }
+    </style>
+    <style>
+        /*********** Side nav [i] **************/
+        nav.i {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 30em;
+            z-index: -1;
+            padding-top: 80px;
+        }
+        nav {
+            transform: translateY(0);
+        }
+        .i-background {
+            position: sticky;
+            height: 100vh;
+            z-index: 30;
+            background: rgba(30,30,30,.9);
+        }
+        .i h2 {
+            font-size: 150%;
+        }
+        .i h3 {
+            margin: 10px;
+            color: rgb(130,130,130);
+        }
+        .i-ticket:hover {
+            border-radius: 10px;
+            border: 2px solid rgb(200,200,200);
+            padding: 18px;
+        }
+        #err {
+            visibility: hidden;
+            position: absolute;
+        }
+        @media only screen and (max-width: 500px){
+            section {
+                visibility: hidden;
+            }
+            #err {
+                position: relative;
+                padding: 25%;
+                visibility: visible;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="https://dbaues.dev" target="_blank">
+                <h2>dan<span>bauer</span></h2>
+            </a>
+            <div id="igloo" onclick="hereMyTickets()">
+                <i class="fas fa-align-right fa-2x" id="trigger"></i>
+            </div>
+            <nav class="i he-gone-he-back" id="items">
+                <div class="i i-background">
+                    <div class="i">
+                        <div class="i i-ticket i-item-1">
+                            <h2>Ticket Item 1</h2>
+                            <h3>Learn Web Development</h3>
+                        </div>
+                        <div class="i i-ticket i-item-2">
+                            <h2>Ticket Item 2</h2>
+                            <h3>Create this page</h3>
+                        </div>
+                        <div class="i i-ticket i-item-3">
+                            <a href="res/Online%20Safety.pptx" download style="text-decoration: none;">
+                                <h2>Ticket Item 3</h2>
+                                <h3>Create a computer safety presentation</h3>
+                            </a>
+                        </div>
+                        <div class="i i-ticket i-item-4">
+                            <h2>Ticket Item 4</h2>
+                            <h3>Register as a merit badge Counselor</h3>
+                        </div>
+                        <div class="i i-ticket i-item-5">
+                            <h2>Ticket Item 5</h2>
+                            <h3>Prepare for internship and career</h3>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <p id="err">Mobile not supported yet</p>
+    <div id="loader"></div>
+    <section class="a">
+        <div class="a a-background">
+            <div class="a a-vert">
+                <div class="a">
+                    <div class="a a-flex-me-betch">
+                        <div class="a a-row-item a-flex-info">
+                            <div class="a a-flex-info">
+                                <h1 class="a">Join Scouting</h1>
+                                <p class="a">
+                                    Scouting is family, fun, friends and a lifetime of adventure! It’s the place where young people can grow to become their very best future selves.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="a a-row-item a-flex-form">
+                            <div class="a a-flex-form">
+                                <h3>Get in contact</h3>
+                                <div class="a">
+                                    <form method="post" id="info-form">
+                                        <div class="a-input a-input-name">
+                                            <label for="name" hidden></label>
+                                            <input type="text" name="name" id="name" required placeholder="Enter your name">
+                                        </div>
+                                        <div class="a-input a-input-email">
+                                            <label for="email" hidden></label>
+                                            <input type="email" name="email" id="email" required placeholder="Enter a valid email">
+                                        </div>
+                                        <div class="a-input a-submit">
+                                            <input class="a-hidden-control" type="submit">
+                                            <a href="#" onclick="submitForm()" class="a-submit-btn">Submit</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="b">
+        <div class="b b-background">
+            <div class="b b-vert">
+                <div class="b b-flex-row">
+                    <div class="b b-row-item">
+                        <h1>01</h1>
+                        <div>
+                            <h2>Adventures</h2>
+                            <p>
+                                The great scouting adventure will take you many places you may have never considered. Expand your horizons.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="b b-row-item">
+                        <h1>02</h1>
+                        <div>
+                            <h2>Camping</h2>
+                            <p>
+                                Learn many different and valuable outdoor skills while having fun with friends.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="b b-row-item">
+                        <h1>03</h1>
+                        <div>
+                            <h2>Waterfront Activities</h2>
+                            <p>
+                                Have fun with the different outdoor activities such as many waterfront activities
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="c">
+            <div class="c c-background">
+                <div class="c c-vert">
+                    <div class="c c-flex-row">
+                        <div class="c c-row-item">
+                            <div class="c c-img-1"></div>
+                            <!--<img src="res/MVIMG_20190712_095320.jpg" alt="">-->
+                        </div>
+                        <div class="c c-row-item">
+                            <div class="c c-img-2"></div>
+                            <!--<img src="res/IMG_0665.JPEG" alt="">-->
+                        </div>
+                        <div class="c c-row-item">
+                            <div class="c c-img-3"></div>
+                            <!--<img src="res/IMG_20180615_130606.jpg" alt="">-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <section class="d">
+        <div class="d d-background">
+            <div class="d d-vert">
+                <div class="d d-content">
+                    <p>
+                        "I have over and over again explained that the purpose of the Boy Scout and Girl Guide Movement is to build men and women as citizens endowed with the three H's namely, Health, Happiness and Helpfulness. The man or woman who succeeds in developing these three attributes has secured the main steps to success this Life."
+                    </p>
+                    <div class="d d-author"><h3>Robert Baden-Powell</h3></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="e">
+        <div class="e e-background">
+            <div class="e e-info">
+                <h3>Opportunities to endeavor</h3>
+            </div>
+            <div class="e e-vert">
+                <div class="e e-flex-row">
+                    <div class="e e-row-item">
+                        <div class="e e-img-1">
+                            <div class="e e-card">
+                                <a href="https://www.bsaseabase.org/" target="_blank">
+                                    <h4>Sea Base</h4>
+                                    <p> Florida</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="e e-row-item">
+                        <div class="e e-img-2">
+                            <div class="e e-card">
+                                <a href="https://www.philmontscoutranch.org/" target="_blank">
+                                    <h4>Philmont</h4>
+                                    <p>New Mexico</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="e e-row-item">
+                        <div class="e e-img-3">
+                            <div class="e e-card">
+                                <a href="https://www.summitbsa.org/" target="_blank">
+                                    <h4>Summit Bechtel</h4>
+                                    <p>West Virginia</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="e e-row-item">
+                        <div class="e e-img-4">
+                            <div class="e e-card">
+                                <a href="https://www.ntier.org/" target="_blank">
+                                    <h4>Northern Tier</h4>
+                                    <p>Minnesota</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="f">
+        <div class="f f-background">
+            <div class="f f-flex">
+                <div class="f f-content f-top">
+                    <h2>Building men and women of the future....</h2>
+                </div>
+                <div class="f f-content f-law">
+                    <h4>- Trustworthy - Loyal - Helpful - Friendly - Courteous - Kind - Obedient - Cheerful - Thrifty - Brave - Clean - Reverent -</h4>
+                </div>
+                <div class="f f-content f-bot">
+                    <h2>...Prepared for life.</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="g">
+        <div class="g g-background">
+            <div class="g g-vert">
+                <div class="g g-content">
+                    <h2>Discover your scouting adventure!</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="h">
+        <div class="h h-background">
+            <div class="h h-vert">
+                <div class="h h-flex-split">
+                    <div class="h h-left">
+                        <div class="h h-flex-row">
+                            <div class="h h-imgs h-row-item h-img-1">
+                                <!--<img> DB + Becki WoodBadge -->
+                                <!--<img> DB + Becki Eagle scout -->
+                            </div>
+                            <div class="h h-imgs h-row-item h-img-2"></div>
+                        </div>
+                    </div>
+                    <div class="h h-right">
+                        <div class="h h-flex-row">
+                            <div class="h h-row-item">
+                                <div class="h h-contact">
+                                    <div>
+                                        <h2>Contact us</h2>
+                                        <a href="#">(507) 476 7576</a>
+                                    </div>
+                                    <div>
+                                        <h2>Troop near me</h2>
+                                        <a href="https://beascout.scouting.org/">scouting.org</a>
+                                    </div>
+                                    <div>
+                                        <h2>Support scouting</h2>
+                                        <a href="https://www.siouxcouncil.org/donate">siouxcouncil.org</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="h h-row-item">
+                                <div class="h-row-background"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div>
+            <h2>daniel bauer</h2>
+        </div>
+        <div class="footer-img"></div>
+        <div>
+            <h2>&copy 2022</h2>
+        </div>
+    </footer>
+    <script>
+        $('#trigger').on('click', function() {
+            let navbar = $('#items');
+            if (navbar.css('opacity') == 0) {
+                navbar.css('opacity', 1);
+                navbar.css('visibility', 'visible');
+            }
+            else {
+                navbar.css('visibility', 'hidden');
+                navbar.css('opacity', 0);
+            }
+        });
+
+        function hereMyTickets() {
+            return;
+        }
+
+        function submitForm() {
+            // Currently submits nowhere but can be changed if needed.
+            let nameField = document.getElementById('name').innerText;
+            let emailField = document.getElementById('email').innerText;
+
+            if (nameField.length <= 0 || emailField.length <= 0) {
+                document.getElementById('info-form').submit();
+            }
+        }
+
+        $('#loader').fadeOut(1750);
+        //document.getElementById('loader').classList.add('load');
+    </script>
+</body>
+</html>
